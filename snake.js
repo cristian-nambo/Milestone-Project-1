@@ -15,6 +15,8 @@ var snakeY = blockSize * 5;
 var velocityX = 0;
 var velocityY = 0;
 
+var snakeBody = []; //the snake body will equal an array. that is going to store segments(an x,y coordinate)
+
 //FOOD
 var foodX; //GOT RID OF THE STARTING POINTS SINCE WE CAN NOW CALL THEM AT RANDOM.
 var foodY;
@@ -39,6 +41,7 @@ function update() {
     context.fillRect(foodX, foodY, blockSize, blockSize); //This is giving the food its color and properties
 
     if(snakeX == foodX && snakeY ==foodY){
+        snakeBody.push([foodX, foodY]) //will add the coordinates of the food the snake ate.
         placeFood();
     }
 
@@ -46,7 +49,9 @@ function update() {
     snakeX += velocityX * blockSize; 
     snakeY += velocityY * blockSize; //giving the snake speed from the function below
     context.fillRect(snakeX, snakeY, blockSize, blockSize); //x and y coordinates this gives color to the snake
-
+    for (let i = 0; i < snakeBody.length; i++){
+        context.fillRect(snakeBody[i][0], snakeBody[i][1], blockSize, blockSize);
+    }
 
 }
 
