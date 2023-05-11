@@ -35,13 +35,18 @@ function update() {
     context.fillStyle = "black"
     context.fillRect(0, 0, board.width, board.height); //THIS IS THE COLOR OF THE BOARD AND ITS PROPERTIES
 
+    context.fillStyle = "red";
+    context.fillRect(foodX, foodY, blockSize, blockSize); //This is giving the food its color and properties
+
+    if(snakeX == foodX && snakeY ==foodY){
+        placeFood();
+    }
+
     context.fillStyle = "lime";
     snakeX += velocityX * blockSize; 
     snakeY += velocityY * blockSize; //giving the snake speed from the function below
     context.fillRect(snakeX, snakeY, blockSize, blockSize); //x and y coordinates this gives color to the snake
 
-    context.fillStyle = "red";
-    context.fillRect(foodX, foodY, blockSize, blockSize); //This is giving the food its color and properties
 
 }
 
