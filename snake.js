@@ -13,8 +13,8 @@ var snakeX = blockSize * 5; //this is the starting point of the snake row 5 colo
 var snakeY = blockSize * 5;
 
 //FOOD
-var foodX = blockSize * 10;
-var foodY = blockSize * 10;
+var foodX; //GOT RID OF THE STARTING POINTS SINCE WE CAN NOW CALL THEM AT RANDOM.
+var foodY;
 
 window.onload = function(){
     board = document.getElementById("board");
@@ -22,6 +22,7 @@ window.onload = function(){
     board.width = cols * blockSize;
     context = board.getContext("2d"); //USED FOR DRAWING ON THE BOARD
 
+    placeFood();
     update();
 }
 
@@ -34,5 +35,11 @@ function update() {
 
     context.fillStyle = "red";
     context.fillRect(foodX, foodY, blockSize, blockSize); //This is giving the food its color and properties
-    
+
+}
+//WE NEED A FUNSTION THAT WILL PLACE THE FOOD AT A RANDOM PLACE USING MATH
+function placeFood(){
+    //0-1) *cols ->(0-19.99999) ->(0-19) *25
+    foodX = Math.floor(Math.random() * cols) * blockSize
+    foodY = Math.floor(Math.random() * rows) * blockSize
 }
