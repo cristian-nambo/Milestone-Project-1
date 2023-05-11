@@ -45,6 +45,14 @@ function update() {
         placeFood();
     }
 
+    for (let i = snakeBody.length -1; i > 0; i--){ //the body will not turn until the last part of the body passes through the coordinates the head went through.
+        snakeBody[i] = snakeBody[i- 1];
+    }
+
+    if (snakeBody.length) {
+        snakeBody[0] = [snakeX, snakeY]
+    }
+
     context.fillStyle = "lime";
     snakeX += velocityX * blockSize; 
     snakeY += velocityY * blockSize; //giving the snake speed from the function below
