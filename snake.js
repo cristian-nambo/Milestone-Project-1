@@ -2,11 +2,15 @@ console.log("Hello World")
 
 
 //BOARD
-var blockSize = 25;
-var rows = 20;
-var cols = 20;
+var blockSize = 25; //this is how big the actual square is on the grid
+var rows = 20; //this is how many squares on the row
+var cols = 20;  //this is for how may squares in the column
 var board;
 var context;
+
+//SNAKE HEAD
+var snakeX = blockSize * 5; //this is the starting point of the snake row 5 coloumn 5
+var snakeY = blockSize * 5;
 
 window.onload = function(){
     board = document.getElementById("board");
@@ -19,5 +23,8 @@ window.onload = function(){
 
 function update() {
     context.fillStyle = "black"
-    context.fillRect(0, 0, board.width, board.height);
+    context.fillRect(0, 0, board.width, board.height); //THIS IS THE COLOR OF THE BOARD AND ITS PROPERTIES
+
+    context.fillStyle = "lime";
+    context.fillRect(snakeX, snakeY, blockSize, blockSize); //x and y coordinates
 }
