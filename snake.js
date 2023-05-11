@@ -53,19 +53,19 @@ function update() {
 //function to chage the direction of the snake using the arrow keys
 
 function changeDirection(e){
-    if(e.code == "ArrowUp"){
+    if(e.code == "ArrowUp" && velocityY != 1){
         velocityX = 0;
         velocityY = -1;
     }
-    else if(e.code == "ArrowDown"){
+    else if(e.code == "ArrowDown" && velocityY != -1){
         velocityX = 0;
         velocityY = 1;
     }
-    if(e.code == "ArrowLeft"){
+    if(e.code == "ArrowLeft" && velocityX !=1){
         velocityX = -1;
         velocityY = 0;
     }
-    if(e.code == "ArrowRight"){
+    if(e.code == "ArrowRight" && velocityX !=-1){
         velocityX = 1;
         velocityY = 0;
     }
