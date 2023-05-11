@@ -12,6 +12,10 @@ var context;
 var snakeX = blockSize * 5; //this is the starting point of the snake row 5 coloumn 5
 var snakeY = blockSize * 5;
 
+//FOOD
+var foodX = blockSize * 10;
+var foodY = blockSize * 10;
+
 window.onload = function(){
     board = document.getElementById("board");
     board.height = rows * blockSize;
@@ -26,5 +30,9 @@ function update() {
     context.fillRect(0, 0, board.width, board.height); //THIS IS THE COLOR OF THE BOARD AND ITS PROPERTIES
 
     context.fillStyle = "lime";
-    context.fillRect(snakeX, snakeY, blockSize, blockSize); //x and y coordinates
+    context.fillRect(snakeX, snakeY, blockSize, blockSize); //x and y coordinates this gives color to the snake
+
+    context.fillStyle = "red";
+    context.fillRect(foodX, foodY, blockSize, blockSize); //This is giving the food its color and properties
+    
 }
