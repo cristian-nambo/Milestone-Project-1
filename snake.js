@@ -21,6 +21,8 @@ var snakeBody = []; //the snake body will equal an array. that is going to store
 var foodX; //GOT RID OF THE STARTING POINTS SINCE WE CAN NOW CALL THEM AT RANDOM.
 var foodY;
 
+var gameOver = false;
+
 window.onload = function(){
     board = document.getElementById("board");
     board.height = rows * blockSize;
@@ -34,6 +36,9 @@ window.onload = function(){
 }
 
 function update() {
+    if (gameOver){
+        return; //this is so we can stop canvas from updating because the game is over
+    }
     context.fillStyle = "black"
     context.fillRect(0, 0, board.width, board.height); //THIS IS THE COLOR OF THE BOARD AND ITS PROPERTIES
 
@@ -59,6 +64,18 @@ function update() {
     context.fillRect(snakeX, snakeY, blockSize, blockSize); //x and y coordinates this gives color to the snake
     for (let i = 0; i < snakeBody.length; i++){
         context.fillRect(snakeBody[i][0], snakeBody[i][1], blockSize, blockSize);
+    }
+
+    //GAME OVER CONDITIONS
+    if (snakeX < 0 || snakeX > cols*blockSize || snakeY < 0 || snakeY > rows*blockSize){
+        gameOver = true;
+        alert('Game Over'); //if the head goes out of the grid it will stop the update function and alert GameOver
+    }
+    for (let i = 0; i < snakeBody.length; i++) {
+        if (snakeX ==snakeBody[i][0] && snakeY ==snakeBody[i][1]){
+         gameOver = true;
+         alert("Game Over")   //if the head touches the body it will stop the update and alert GameOver
+        }
     }
 
 }
