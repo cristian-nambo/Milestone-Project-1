@@ -42,6 +42,7 @@ I thought it would be fitting to make my first web game...a SNAKE game. I plan o
 Pretty simple logic. I wanted to use the arrow keys to move the snake on the x and y axis. Every time the snake eats it will continue to grow.
 I will be using the canvas Element; which I found to be exactly what the name indicates. A blank rectangle that we can draw inside of using JavaScript.
 Sources:
+
 https://www.w3schools.com/html/html5_canvas.asp
 
 https://www.w3schools.com/graphics/canvas_coordinates.asp
@@ -74,11 +75,9 @@ Every time the head touches an apple (in my case) it will extend the snakes body
 
 ### MVP Criteria
 
-XXX IMPORTANT! Replace the text below as you list the MVP criteria you met AND THEN DELETE THIS LINE XXX
-
-- One thing my game must do to meet my minimum standard.
-- Another thing.
-- Etc.
+- One thing my game must do to meet my minimum standard be playable.
+- Another target is it has to be intuitive.
+- Code is clean and no repetitions.
 
 
 ### Post-MVP Plans
