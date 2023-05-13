@@ -28,7 +28,7 @@
 
 ## Deployment
 
-The web game is deployed at cristian-nambo.github.io.
+The web game is deployed at https://cristian-nambo.github.io/Milestone-Project-1/
 
 
 ## Project Description
