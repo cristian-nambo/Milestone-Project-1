@@ -43,7 +43,17 @@ Pretty simple logic. I wanted to use the arrow keys to move the snake on the x a
 I will be using the canvas Element; which I found to be exactly what the name indicates. A blank rectangle that we can draw inside of using JavaScript.
 Sources:
 https://www.w3schools.com/html/html5_canvas.asp
+
+https://www.w3schools.com/graphics/canvas_coordinates.asp
+
+https://www.codingnepalweb.com/create-snake-game-htm-css-javascript/
+
+https://www.w3schools.com/html/html5_canvas.asp
+
+https://www.freecodecamp.org/news/how-to-build-a-snake-game-in-javascript/
+
 https://www.geeksforgeeks.org/create-a-snake-game-using-html-css-and-javascript/
+
 Image by rawpixel.com
 
 We start with a board that will be 20x20 and the block size will be 25. I tried playing with the "settings" and these seemed easy on the eyes and they fit most screens.
