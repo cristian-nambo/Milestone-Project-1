@@ -7,15 +7,17 @@
     <title>Snake</title>
 
     <link rel="stylesheet" href="./stylesheet.css"/>
-    <script src="./snake.js" ></script>
+    <script src="./snake.js" defer></script> <!-- defer tell the browser to finish analyzing before loading scripts -->
 </head>
 <body class = "game">
     <h1> Snake </h1>
     <canvas id="board"></canvas>
+    <div class=" wrapper">
+        <div class="game-details">
+            <span class="score">Score: 0</span>
+            <span class="high-score">High Score: 205</span>
+        </div>
+    </div>
 </body>    
-
-
-
-
 
 </html>

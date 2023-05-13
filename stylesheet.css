@@ -1,15 +1,44 @@
-body.delilah {
+body.main {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: #000000;
     background-image: url("./assets/image-from-rawpixel-id-6817078-original.png"); 
    }
+/* Image by rawpixel.com */
+/* https://creativecommons.org/publicdomain/zero/1.0/ */
+
+ h1{
+    color:whitesmoke;
+ }  
+
+p{
+    color: antiquewhite;
+}
+
 
 /* TO KEEP THINGS IN ORDER AND I AM NEW TO THIS, ANYTHING FROM HERE TO THE BOTTOM IS FOR PAGE 2 "SNAKE GAME" */ 
    
 body.game {
 font-family: 'Courier New', Courier, monospace;  /* THIS IS JUST OUR FONT */
 text-align: center;   /*  this will align everything to the center to make it look pretty lol */
-background-color: rgb(81, 245, 6);
-
+background-color: rgb(104, 118, 201);
 }
 
+.center {
+    position:absolute;
+    bottom: 1%;
+    right:10%;
+  }
+  
+/* .wrapper{
+    width: 6vmin;
+    height: 6vmin;
+    background: grey;
+} */
+
+.game-details{
+    color: black;
+    font-size: large;
+    font-weight: 666;
+    display: flex;
+    justify-content:space-evenly;
+}

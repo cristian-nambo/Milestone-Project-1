@@ -1,4 +1,6 @@
 console.log("Hello World")
+const scoreElement = document.querySelector(".score");
+const highScoreElement = document.querySelector(".highScore");
 
 
 //BOARD
@@ -7,6 +9,10 @@ var rows = 20; //this is how many squares on the row
 var cols = 20;  //this is for how may squares in the column
 var board;
 var context;
+let score = 0;
+let highScore = localStorage.getItem("high-score") || 0; //getting high score from local storage
+
+//highScoreElement.innerText = `High Score: ${highScore}`;
 
 //SNAKE HEAD
 var snakeX = blockSize * 5; //this is the starting point of the snake row 5 coloumn 5
@@ -46,8 +52,14 @@ function update() {
     context.fillRect(foodX, foodY, blockSize, blockSize); //This is giving the food its color and properties
 
     if(snakeX == foodX && snakeY ==foodY){
-        snakeBody.push([foodX, foodY]) //will add the coordinates of the food the snake ate.
+        snakeBody.push([foodX, foodY]); //will add the coordinates of the food the snake ate.
         placeFood();
+        score++;
+
+        highScore = score >= highScore ? score : highScore;
+        localStorage.setItem("high-score", highScore); //storing high score to local storage
+        scoreElement.innerText = `Score: ${score}`;
+        highScoreElement.innerText = `High Score: ${highScore}`;
     }
 
     for (let i = snakeBody.length -1; i > 0; i--){ //the body will not turn until the last part of the body passes through the coordinates the head went through.
@@ -69,12 +81,14 @@ function update() {
     //GAME OVER CONDITIONS
     if (snakeX < 0 || snakeX > cols*blockSize || snakeY < 0 || snakeY > rows*blockSize){
         gameOver = true;
-        alert('Game Over'); //if the head goes out of the grid it will stop the update function and alert GameOver
+        alert("Game Over!!! \n" + "Press OK to Retry"); //if the head goes out of the grid it will stop the update function and alert GameOver
+        location.reload();
     }
     for (let i = 0; i < snakeBody.length; i++) {
         if (snakeX ==snakeBody[i][0] && snakeY ==snakeBody[i][1]){
          gameOver = true;
-         alert("Game Over")   //if the head touches the body it will stop the update and alert GameOver
+         alert("Game Over!!! \n" + "Press OK to Retry")   //if the head touches the body it will stop the update and alert GameOver
+         location.reload();
         }
     }
 
@@ -109,3 +123,5 @@ function placeFood(){
     foodX = Math.floor(Math.random() * cols) * blockSize
     foodY = Math.floor(Math.random() * rows) * blockSize
 }
+
+highScoreElement.innerText = `High Score: ${highScore}`;
