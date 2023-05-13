@@ -1,7 +1,5 @@
 
 
-XXX IMPORTANT! DELETE THIS LINE AND THIS SECTION (LINES 3-10) BEFORE YOU REVISE YOUR README AND SUBMIT YOUR FINAL PROJECT XXX
-
 ## General Requirements
 
 - This is a solo project! (Just to clarify, you may do the same game as another student, but you may not work together.)
@@ -12,7 +10,6 @@ XXX IMPORTANT! DELETE THIS LINE AND THIS SECTION (LINES 3-10) BEFORE YOU REVISE 
 - This game must be deployed on Github Pages or another location.
 
 
-XXX IMPORTANT! DELETE THIS LINE AND THIS SECTION (LINES 15-26) BEFORE YOU REVISE YOUR README AND SUBMIT YOUR FINAL PROJECT XXX
 
 ## Game Requirements
 
